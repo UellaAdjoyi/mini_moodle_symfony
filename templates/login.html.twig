@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Login {% endblock %}
+
+
+{% block content %}
+
+<body class="bg-light ">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-4 bg-white m-auto rounded-top">
+                <img src="{{ asset('images/utbm.png') }}" alt="utbm-logos" width="300">
+                <h2 class="text-center"> Connexion</h2>
+                <form action="">
+                    <div class="input-group  mb-3">
+                        <span class="input-group-text"></span>
+                        <input type="text" class="form-control" placeholder="Username ">
+                    </div>
+
+                    <div class="input-group  mb-3">
+                        <span class="input-group-text"></span>
+                        <input type="password" class="form-control" placeholder="Password ">
+                    </div>
+                    <div class="d-grid  p-3">
+                        <button type="button" class="btn btn-primary mb-3 ">Connexion</button>
+
+                        <p class="text-center"><a href="password-forget.html"> Mot de passe oublier ? </a></p>
+                        <hr>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    {% block javascripts %}
+    <script src="{{asset('js/login.js')  }}"></script>
+{% endblock %}

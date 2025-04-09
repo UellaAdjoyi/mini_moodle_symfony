@@ -1,0 +1,68 @@
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
+  
+<!--Burger-->
+<button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- LOGO-->
+<a class="navbar-brand me-4" href="#" class="logo">
+    <img id="logo" src="/Projet_WE4A/assets/images/utbm.png" alt="Logo_UTBM" height="40">
+  </a>
+<!-- Contenu Navbar -->
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Recherche de cours</a>
+        </li>
+
+        <!-- Dropwon 1-->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sites UTBM</a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Belfort</a></li>
+            <li><a class="dropdown-item" href="#">Montbéliard</a></li>
+            <li><a class="dropdown-item" href="#">Sevenans</a></li>
+            </ul>
+        </li>
+            <!-- Dropwon 2-->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Semestre à l'UTBM</a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Semestre 1</a></li>
+            <li><a class="dropdown-item" href="#">Semestre 2</a></li>
+            </ul>
+        </li>
+             <!-- Dropwon 3-->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Stages/S.E.E.</a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Stage 1</a></li>
+            <li><a class="dropdown-item" href="#">Stage 2</a></li>
+            </ul>
+        </li>
+        </ul>
+
+        <!-- Langue et Connexion -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown me-3">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">🌐 Français (fr)</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Deutsch</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="login.php">Connexion</a>
+        </li>
+        </ul>
+    </div>
+    </nav>
+
+    <!-- JS Bootstrap -->
+    <script src="/Projet_WE4A/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+

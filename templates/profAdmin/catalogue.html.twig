@@ -1,0 +1,135 @@
+<?php
+$qui = "admin";
+?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue</title>
+    <link rel="stylesheet" href="../../styles/catalogue.css">
+    <?php include("../../pageParts/_link.html.twig"); ?>
+    <?php include("../../pageParts/_modificationProfil.html.twig"); ?>
+
+</head>
+
+<body>
+    <?php
+    include('../../pageParts/navbarProfAdmin.html.twig');
+
+    ?>
+    <div class="col-md-9 offset-1" id="catalogue">
+        <div class="container mt-5">
+
+            <!-- Boutons pour changer d'onglet -->
+            <div class="d-flex justify-content-center mb-4">
+                <button id="ue-tab" class="btn btn-primary me-2">UEs</button>
+                <button id="user-tab" class="btn btn-secondary">Utilisateurs</button>
+            </div>
+
+            <!-- Contenu des UE -->
+            <div id="ue-content">
+                <h2 class="mt-4">Liste des UEs</h2>
+                <div> <!--  ajouter une UE -->
+                    <button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#addUeModal">
+                        Créer
+                    </button>
+                </div>
+                <div id="ue-list" class="list-group mb-5">
+                    <!--  UE  chargées via AJAX ici -->
+                </div>
+                <h3 class="mt-4">UEs Assignées à l'utilisateur</h3>
+                <ul id="assigned-ue-list" class="list-group">
+                    <!-- Les UE assignées seront affichées ici -->
+                </ul>
+            </div>
+
+
+            <!-- Contenu des Utilisateurs (masqué par défaut) -->
+            <div id="user-content" style="display: none;">
+                <h2 class="mt-4">Liste des Utilisateurs</h2>
+                <div>
+                    <button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#signupModal">Créer</button>
+                </div>
+                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal">Inscription
+                    </button></div> -->
+                <div id="user-list" class="list-group">
+                    <!-- Les utilisateurs seront chargés via AJAX ici -->
+                </div>
+                <!--  ajouter un user -->
+
+            </div>
+
+            <!-- ajout d'une UE -->
+            <div class="modal fade" id="addUeModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Ajouter une UE</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="add-ue-form">
+                                <input type="text" id="ue-code" class="form-control mb-2" placeholder="Code UE" required>
+                                <input type="text" id="ue-title" class="form-control mb-2" placeholder="Intitulé" required>
+                                <input type="file" id="ue-image" class="form-control mb-2" accept="image/*">
+                                <button type="submit" class="btn btn-primary">Ajouter</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--modification d"UES -->
+            <div class="modal fade" id="editUEModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modifier l'UE</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" id="ueId">
+                            <div class="mb-3">
+                                <label for="ueCode" class="form-label">Code UE</label>
+                                <input type="text" id="ueCode" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ueIntitule" class="form-label">Intitulé</label>
+                                <input type="text" id="ueIntitule" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ueImage" class="form-label">Image URL</label>
+                                <input type="text" id="ueImage" class="form-control">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-primary" id="saveUEChanges">Enregistrer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <?php
+    include('../admin/inscription.html.twig');
+    ?>
+
+
+    <script src="../../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../public/js/catalogue.js"></script>
+    <script src="../../public/js/inscription.js"></script>
+
+</body>
+
+</html>
+<?php
+include('../../pageParts/_footer.html.twig');
+?>

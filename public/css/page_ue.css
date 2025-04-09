@@ -1,0 +1,37 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* Organise le contenu en colonne */
+}
+
+.page-ue h2 {
+    margin-top: 100px;
+}
+
+.page-ue main {
+    flex: 1;
+}
+
+.page-ue .card {
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.page-ue .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.page-ue .course-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

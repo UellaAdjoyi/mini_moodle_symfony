@@ -1,0 +1,91 @@
+<?php
+$qui = "prof";
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de post</title>
+    <link rel="stylesheet" href="../../styles/creationPost.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <?php include("../../pageParts/_link.html.twig"); ?>
+    <?php include("../../pageParts/_modificationProfil.html.twig"); ?>
+
+</head>
+
+<body>
+    <!-- include de la nav bar -->
+    <?php include("../../pageParts/navbarProfAdmin.html.twig"); ?>
+    <!-- debut de la page  -->
+
+    <div class="rectangle">
+        <div class="container mt-4">
+            <!-- Conteneur des boutons de sélection -->
+            <div class="btn-container">
+                <button id="msgButton" class="btn btn-primary" onclick="toggleForm('message')">Message Texte</button>
+                <button id="fileButton" class="btn btn-secondary" onclick="toggleForm('fichier')">Partager Fichier</button>
+            </div>
+
+            <!-- Formulaire Message Texte -->
+            <div id="messageForm" class="form-container">
+                <div class="form-title">Créer un Message Texte</div>
+                <form>
+                    <div class="radio-container">
+                        <label>Type de message</label><br>
+                        <input type="radio" id="important" name="typeMessage" value="important">
+                        <label for="important">Important</label>
+                        <input type="radio" id="recommandation" name="typeMessage" value="recommandation" checked>
+                        <label for="recommandation">Recommandation</label>
+                        <input type="radio" id="information" name="typeMessage" value="information" checked>
+                        <label for="information">Information</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="msgTitle">Titre du Message</label>
+                        <input type="text" class="form-control" id="msgTitle" placeholder="Entrez le titre du message">
+                    </div>
+                    <div class="form-group">
+                        <label for="msgContent">Contenu du Message</label>
+                        <textarea class="form-control" id="msgContent" rows="4" placeholder="Entrez le contenu du message"></textarea>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-success">Publier</button>
+                        <button class="btn btn-danger"><a href="post_ue.html.twig">Annuler</a></button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Formulaire Partage Fichier -->
+            <div id="fileForm" class="form-container">
+                <div class="form-title">Partager un Fichier</div>
+                <form>
+                    <div class="form-group">
+                        <label for="fileTitle">Titre du Fichier</label>
+                        <input type="text" class="form-control" id="fileTitle" placeholder="Entrez le titre du fichier">
+                    </div>
+                    <div class="form-group">
+                        <label for="fileUpload">Choisir un Fichier</label>
+                        <input type="file" class="form-control" id="fileUpload">
+                    </div>
+                    <div class="form-group">
+                        <label for="fileUpload">Commentaire</label>
+                        <textarea name="commentaire" class="form-control" id=""></textarea>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-success">Publier</button>
+                        <button class="btn btn-danger"><a href="post_ue.html.twig">Annuler</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/Projet_WE4A/js/creationPost.js"></script>
+    <script src="/Projet_WE4A/js/navigation.js"></script>
+
+</body>
+
+</html>
