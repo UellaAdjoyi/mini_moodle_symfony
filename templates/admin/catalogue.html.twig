@@ -1,10 +1,16 @@
 {%extends 'base.html.twig' %}
 {%block title %} Catalogue {% endblock %}
 
-<body>
-    <?php
-    include('../../pageParts/navbarAdmin.php');
-    ?>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/catalogue.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbarAdmin.css') }}">
+{% endblock  %}
+
+{% block navbar %}
+{% include 'includes/navbarAdmin.html.twig' %}
+{% endblock %}
+
+{%block content%}
     <div class="col-md-9 offset-1" id="catalogue">
         <div class="container mt-5">
 
@@ -109,18 +115,18 @@
 
         </div>
     </div>
+    {% block component %}
+        {% include 'admin/inscription.html.twig' %}
+    {% endblock %}
 
-    <?php
-    include('../admin/inscription.php');
-    ?>
+{% endblock %}
 
-    <script src="../../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../public/js/catalogue.js"></script>
-    <script src="../../public/js/inscription.js"></script>
 
-</body>
+{% block javascripts %}
+    <script src="{{ asset('js/catalogue.js') }}"></script>
+    <script src="{{ asset('js/inscription.js ')}}"></script>
+{% endblock %}
 
-</html>
-<?php
-include('../../pageParts/_footer.html.twig');
-?>
+{% block footer %}
+    {% include 'includes/_footer.html.twig' %}
+{% endblock %}

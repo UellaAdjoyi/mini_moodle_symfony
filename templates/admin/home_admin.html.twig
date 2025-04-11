@@ -2,6 +2,11 @@
 
 {% block title %} Home {% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/adminpage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbarAdmin.css') }}">
+{% endblock  %}
+
 {% block navbar %}
     {% include 'includes/navbarAdmin.html.twig' %}
 {% endblock %}
@@ -149,8 +154,7 @@
     </div>
 
     {% block javascripts %}
-        <script src="../../bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-        <script src="../../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
     {% endblock %}
 {% endblock %}
 

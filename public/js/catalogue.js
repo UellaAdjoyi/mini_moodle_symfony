@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
             ueItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
 
             // Vérifier si l'image est fournie, sinon utiliser une image par défaut
-            let imageUrl = ue.image ? ue.image : "/Projet_WE4A/assets/images/ue.png";
+            let baseUrl = document.body.dataset.baseUrl;
+            let imageUrl = ue.image ? ue.image : `${baseUrl}/images/ue.png`;
 
             ueItem.innerHTML = `
                 <div class="d-flex align-items-center">
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let intitule = document.getElementById("ue-title").value;
         let ueImageInput = document.getElementById("ue-image");
         let ueImage = ueImageInput.files[0]; // Récupérer le fichier image
-        let defaultImage = "../assets/images/ue.png";
+        let defaultImage = "images/ue.png";
 
         // Vérifier si une image est sélectionnée
         let imagePath = ueImage ? URL.createObjectURL(ueImage) : defaultImage;

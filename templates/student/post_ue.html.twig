@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html.twig' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="../../styles/post_ue.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <?php
-    include('../../pageParts/_link.html.twig');
-    include("../../pageParts/_modificationProfil.html.twig");
-    ?>
-</head>
+{% block navbar %}
+    {% include 'includes/navbarEtud.html.twig' %}
+{% endblock %}
 
-<body>
+{% block content %}
     <!-- include de la nav bar -->
     <?php include("../../pageParts/navbarEtud.php"); ?>
     <!-- debut de la page  -->
@@ -47,10 +38,16 @@
             </div>
         </div>
     </div>
-    <?php //include("../../pageParts/_footer.html.twig");
-    ?>
+
+    {% block component %}
+        {% include 'includes/_modificationProfil' %}
+    {% endblock %}
+
+{% endblock %}
+{% block footer %}
+{% include 'includes/_footer' %}
+{% endblock %}
+
+{% block javascripts %}
     <script src="/Projet_WE4A/js/navigation.js"></script>
-
-</body>
-
-</html>
+{% endblock %}

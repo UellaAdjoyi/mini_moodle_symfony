@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
+{% extends 'base.html.twig' %}
+{% block navbar %}
+    {% include 'includes/navbarEtud.html.twig' %}
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page UE</title>
-    <link rel="stylesheet" href="../../styles/page_ue.css">
-    <?php
-    include('../../pageParts/_link.html.twig');
-    include("../../pageParts/_modificationProfil.html.twig");
-    ?>
-
-</head>
-
-
+{% block content %}
 <body class="page-ue">
-    <?php
-    include('../../pageParts/navbarEtud.php');
-    ?>
     <main class="container">
         <br class="container mt-4">
         <h2 class="mb-4">Mes cours</h2>
@@ -91,14 +78,17 @@
         </div>
     </main>
     </br>
-    <footer>
-        <?php
-        include('../../pageParts/_footer.html.twig');
-        ?>
-    </footer>
-
-    <script src="/Projet_WE4A/js/navigation.js"></script>
-
 </body>
+    {% endblock %}
 
-</html>
+    {% block component %}
+        {% include 'includes/_modificationProfil.html.twig' %}
+    {% endblock %}
+
+    {% block javascripts %}
+    <script src="/Projet_WE4A/js/navigation.js"></script>
+{% endblock %}
+
+    {% block footer %}
+    {% include 'includes/_footer.html.twig' %}
+{% endblock %}
